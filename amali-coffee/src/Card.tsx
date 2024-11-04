@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({
   const borderColor = isInCart ? "border-2 rounded-lg  border-orange-700" : "";
 
   return (
-    <div className="border-1 border-b-gray-600 rounded-lg max-w-64 mr-4 mt-4 font-redhat">
+    <div className="bg-white shadow-lg rounded-lg max-w-64 mr-4 mt-4 font-redhat">
       <div className="flex-col flex items-center justify-center relative">
         <div className={borderColor}>
           <img
@@ -61,7 +61,7 @@ const Card: React.FC<CardProps> = ({
           </div>
         )}
       </div>
-      <div className="py-5">
+      <div className="py-5 pl-2">
         <h1>{product}</h1>
         <h1 className="font-semibold">{productdefn}</h1>
         <h1 className="text-red-600">${price}</h1>
