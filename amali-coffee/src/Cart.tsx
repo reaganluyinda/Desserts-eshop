@@ -18,7 +18,7 @@ const Cart: React.FC<CartProps> = ({ handleShowModal }) => {
   );
 
   return (
-    <div className="border-2 border-solid rounded-xl bg-slate-50 min-h-[350px] mx-4 pb-4 font-redhat">
+    <div className="border-2 border-solid rounded-xl bg-slate-50 min-h-[350px]  pb-4 font-redhat mt-4">
       <h1 className="text-orange-600 font-bold px-5 pt-5 text-[25px]">
         Your cart
         {totalItems > 0 && <span className="px-1">({totalItems})</span>}
