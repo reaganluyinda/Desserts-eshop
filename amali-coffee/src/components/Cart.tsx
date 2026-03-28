@@ -1,8 +1,8 @@
-import emptycart from "./assets/illustration-empty-cart.svg";
-import carbon_neutral from "./assets/icon-carbon-neutral.svg";
-import { products } from "./product";
+import emptycart from "../assets/illustration-empty-cart.svg";
+import carbon_neutral from "../assets/icon-carbon-neutral.svg";
+import { products } from "../product";
 import CartItem from "./CartItem";
-import { useShopContext } from "./context/shop-context";
+import { useShopContext } from "../context/shop-context";
 
 interface CartProps {
   handleShowModal: () => void;

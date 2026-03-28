@@ -1,7 +1,7 @@
 import ConfirmedItem from "./Confirmed-Item";
-import { useShopContext } from "./context/shop-context";
-import { products } from "./product";
-import orderconfirmed from "./assets/icon-order-confirmed.svg";
+import { useShopContext } from "../context/shop-context";
+import { products } from "../product";
+import orderconfirmed from "../assets/icon-order-confirmed.svg";
 
 interface ModalProps {
   handleShowModal: () => void;

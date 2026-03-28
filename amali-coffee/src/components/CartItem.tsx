@@ -1,5 +1,5 @@
 import { CircleX } from "lucide-react";
-import { useShopContext } from "./context/shop-context";
+import { useShopContext } from "../context/shop-context";
 
 type CardProps = {
   id: number;

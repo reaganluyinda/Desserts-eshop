@@ -1,5 +1,5 @@
-import cartimage from "./assets/icon-add-to-cart.svg";
-import { useShopContext } from "./context/shop-context";
+import cartimage from "../assets/icon-add-to-cart.svg";
+import { useShopContext } from "../context/shop-context";
 
 type CardProps = {
   id: number;

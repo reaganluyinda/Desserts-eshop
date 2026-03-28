@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Cart from "./Cart";
+import Cart from "./components/Cart";
 import ShopContextProvider from "./context/shop-context";
-import Header from "./Header";
-import Modal from "./Modal";
+import Header from "./components/Header";
+import Modal from "./components/Modal";
 
-import Shop from "./Shop";
+import Shop from "./components/Shop";
 
 function App() {
   const [showModal, setShowModal] = useState(false);

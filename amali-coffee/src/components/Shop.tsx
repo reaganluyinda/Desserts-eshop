@@ -1,5 +1,5 @@
 import Card from "./Card";
-import { products } from "./product";
+import { products } from "../product";
 function Shop() {
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
