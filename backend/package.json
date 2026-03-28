@@ -1,0 +1,13 @@
+{
+  "name": "amali-backend",
+  "version": "1.0.0",
+  "description": "backend to the amali-cafe e-shop",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": " node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "reagan",
+  "license": "ISC"
+}
