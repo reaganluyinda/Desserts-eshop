@@ -1,1 +1,28 @@
 GET http://localhost:3003/api/products
+
+###
+
+GET http://localhost:3003/api/products/4
+
+###
+POST http://localhost:3003/api/products
+Content-Type: application/json
+
+{
+    "name": "Cappuccino",
+    "description": "Espresso with steamed milk and a layer of foam on top.",
+    "price": 3.5
+}
+
+###
+DELETE http://localhost:3003/api/products/3
+
+###
+PUT http://localhost:3003/api/products/2
+Content-Type: application/json
+
+{
+    "name": "Latte",
+    "description": "Espresso with steamed milk and a small amount of foam on top.",
+    "price": 3.0
+}
