@@ -2,7 +2,7 @@ GET http://localhost:3003/api/products
 
 ###
 
-GET http://localhost:3003/api/products/4
+GET http://localhost:3003/api/products/69ca6bc95344f2049af91147
 
 ###
 POST http://localhost:3003/api/products

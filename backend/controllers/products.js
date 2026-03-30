@@ -1,5 +1,6 @@
 
 const productsRouter = require('express').Router()
+const Product = require('../models/product')
 
 let products = [
     {
@@ -13,32 +14,33 @@ let products = [
 
 
 //fetch all products
-productsRouter.get('/', (request, response) => {
+productsRouter.get('/', async(request, response) => {
+const products = await Product.find({})
     response.json(products)
 })
 
 //fetch a single product by id
-productsRouter.get('/:id', (request,response) => {
- const id = Number(request.params.id)
- const product = products.find(p => p.id === id)
-    if(!product){
-        response.status(404).json({ error: "Product not found" })
-        return
-    }
-    response.json(product)
+productsRouter.get('/:id', async (request,response) => {
+ const product = await Product.findById(request.params.id)
+ if(product){
+response.json(product)
+ }
+ else{
+    response.status(404).json({ error: "Product not found" })
+ }
+    
 })
 
 //add a new product
-productsRouter.post('/', (request, response) =>{
+productsRouter.post('/', async (request, response) =>{
     const body = request.body
-    const newProduct = {
-        id: products.length + 1,
+    const product = new Product({
         name: body.name,
         description: body.description,
         price: body.price
-    }
-    products = products.concat(newProduct)
-    response.status(201).json(newProduct)
+    })
+   const savedProduct = await product.save()
+   response.status(201).json(savedProduct)
 })
 
 //delete a product by id
