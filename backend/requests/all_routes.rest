@@ -16,14 +16,14 @@ Content-Type: application/json
 {
     "name": "white coffee",
     "description": "A simple and classic choice, white coffee is made by brewing ground coffee with steamed milk.",
-    "price": 3.0
+    "price": 2.5
 }
 
 ###
-DELETE http://localhost:3003/api/products/3
+DELETE http://localhost:3003/api/products/69ce4e46746dbdfbf2fe9501
 
 ###
-PUT http://localhost:3003/api/products/2
+PUT http://localhost:3003/api/products/69ce55c79a4ef7e84f0dcc9c
 Content-Type: application/json
 
 {

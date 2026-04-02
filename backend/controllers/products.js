@@ -67,16 +67,19 @@ response.status(204).end()
 })
 
 //update a product by id
-productsRouter.put('/:id', (request, response)=>{
-    const id = Number(request.params.id)
+productsRouter.put('/:id', async (request, response)=>{
     const body = request.body
-    const productIndex = products.findIndex(p => p.id === id)
-    if(productIndex === -1){
-        response.status(404).json({ error: "Product not found" })
-        return
-    }
-    const updatedProduct = {...products[productIndex], ...body}
-    products[productIndex] = updatedProduct
+
+    if(!body.name || !body.price){
+        return response.status(400).json({ error: 'Name and price are required' })
+       }
+
+    const updatedProduct = await Product.findByIdAndUpdate(request.params.id, {
+        name: body.name,
+        description: body.description,
+        price: body.price
+    }, { new: true, runValidators: true, context: 'query' })
+
     response.status(200).json(updatedProduct)
 })
 
