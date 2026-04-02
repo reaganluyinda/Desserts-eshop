@@ -8,10 +8,15 @@ GET http://localhost:3003/api/products/69ca6bc95344f2049af91147
 POST http://localhost:3003/api/products
 Content-Type: application/json
 
+# {
+#     "name": "Cappuccino",
+#     "description": "Espresso with steamed milk and a layer of foam on top.",
+#     "price": 3.5
+# }
 {
-    "name": "Cappuccino",
-    "description": "Espresso with steamed milk and a layer of foam on top.",
-    "price": 3.5
+    "name": "white coffee",
+    "description": "A simple and classic choice, white coffee is made by brewing ground coffee with steamed milk.",
+    "price": 3.0
 }
 
 ###

@@ -1,6 +1,7 @@
 
 const productsRouter = require('express').Router()
 const Product = require('../models/product')
+const { error } = require('../utils/logger')
 
 let products = [
     {
@@ -26,7 +27,7 @@ productsRouter.get('/:id', async (request,response) => {
 response.json(product)
  }
  else{
-    response.status(404).json({ error: "Product not found" })
+    response.status(404).json({ error: error.message })
  }
     
 })
@@ -34,20 +35,35 @@ response.json(product)
 //add a new product
 productsRouter.post('/', async (request, response) =>{
     const body = request.body
-    const product = new Product({
+
+ if(!body.name || !body.price){
+    return response.status(400).json({ error: 'Name and price are required' })
+   }
+   try{
+ const product = new Product({
         name: body.name,
         description: body.description,
         price: body.price
     })
    const savedProduct = await product.save()
    response.status(201).json(savedProduct)
+   }
+   catch(error){
+    next(error)
+   }
+   
 })
 
 //delete a product by id
-productsRouter.delete('/:id', (request, response) => {
-    const id =Number(request.params.id)
-    products = products.filter(p => p.id !== id)
-    response.status(204).end()
+productsRouter.delete('/:id', async (request, response) => {
+    const product = await Product.findByIdAndDelete(request.params.id)
+
+    if(!product){
+        return response.status(404).json({ error: "Product not found" })
+    }
+    else{
+response.status(204).end()
+    }
 })
 
 //update a product by id
