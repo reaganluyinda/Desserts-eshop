@@ -29,5 +29,5 @@ Content-Type: application/json
 {
     "name": "Latte",
     "description": "Espresso with steamed milk and a small amount of foam on top.",
-    "price": 3.0
+    "price": 3.5
 }
