@@ -8,13 +8,13 @@ const productsRouter = require('./controllers/products')
 const app = express()
 
 logger.info('Connecting to MongoDb:', config.MONGODB_URI)
-mongoose.connect(config.MONGODB_URI, {family: 4})
-.then(() => {
+mongoose.connect(config.MONGODB_URI, { family: 4 })
+  .then(() => {
     logger.info('Connected to MongoDB')
-})
-.catch((error) => {
+  })
+  .catch((error) => {
     logger.error('Error connecting to MongoDB:', error.message)
-})
+  })
 
 app.use(express.json())
 app.use(middleware.requestLogger)
