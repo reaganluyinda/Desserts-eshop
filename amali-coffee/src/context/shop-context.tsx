@@ -12,7 +12,7 @@ export type ShopContextType = {
 };
 
 const getDefaultCart = () => {
-  let cart: any = {};
+  const cart: any = {};
   for (let i = 1; i < products.length + 1; i++) {
     cart[i] = 0;
   }
@@ -38,7 +38,7 @@ const ShopContextProvider: React.FC<{ children: React.ReactNode }> = ({
     let totalAmount = 0;
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
-        let iteminfo = products.find((product) => product.id == Number(item));
+        const iteminfo = products.find((product) => product.id == Number(item));
         if (iteminfo) {
           totalAmount += cartItems[item] * iteminfo.price;
         }
